@@ -1,7 +1,9 @@
 package fi.ln.tlv
 
-class Tag(var tag: IndexedSeq[Int]) {
+class Tag(tag: IndexedSeq[Int]) extends IndexedSequenceable {
   override def toString = tag.map[String, IndexedSeq[String]]((charValue: Int) => "%02X".format(charValue)).mkString
+
+  def toIndexedSeq = tag
 }
 
 object Tag {
