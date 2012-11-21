@@ -1,5 +1,6 @@
 package fi.ln.tlv
 
+import element.PrimitiveElement
 import java.io.{EOFException, File}
 import collection.mutable.ListBuffer
 
@@ -8,16 +9,16 @@ class Parser {
   def parseFile(file: File) = {
     val stream = new Stream(file)
 
-    val tlvs = new ListBuffer[TLV]
+    val tlv = TLV()
 
-    try while (true) tlvs += readTLV(stream) catch {
+    try while (true) tlv += readElement(stream) catch {
       case e: EOFException =>
     }
 
-    tlvs
+    tlv
   }
 
-  def readTLV(stream: Stream) = new TLV(
+  def readElement(stream: Stream) = new PrimitiveElement(
     new Tag(stream.readBytesWhile(Tag.hasMoreBytes)),
     new Data(stream.readBytes(Length.fromBytes(stream.readBytesWhile(Length.getHasMoreBytes()))))
   )
