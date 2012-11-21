@@ -1,0 +1,31 @@
+
+[DFAA01]
+  [0] : 'ppppp' (packed)
+  [1] : 'ppppp' (packed)
+[FFAA01]
+  [0]
+    [DFAA02]
+      [0] : 'kkkkk' (packed)
+    [DFAA03]
+      [0] : 'sssss' (packed)
+    [FFAA02]
+      [0]
+        [DFAA02]
+          [0] : 'kkkkk' (packed)
+        [DFAA03]
+          [0] : 'sssss' (packed)
+  [1]
+    [DFAA02]
+      [0] : 'kkkkk' (packed)
+    [DFAA03]
+      [0] : 'sssss' (packed)
+    [FFAA02]
+      [0]
+        [DFAA02]
+          [0] : 'kkkkk' (packed)
+        [DFAA03]
+          [0] : 'sssss' (packed)
+[DFAA04]
+  [0] : 'rrrrr' (packed)
+  [1] : 'rrrrr' (packed)
+
